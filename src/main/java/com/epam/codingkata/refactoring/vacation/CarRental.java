@@ -3,7 +3,7 @@ package com.epam.codingkata.refactoring.vacation;
 import java.util.Date;
 
 /**
- * Techniques: Naming, Extract Method, Move Method, Extract class
+ *
  */
 public class CarRental {
     Vehicle vehicle;
