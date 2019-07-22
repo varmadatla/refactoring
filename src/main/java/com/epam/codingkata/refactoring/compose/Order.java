@@ -2,28 +2,25 @@ package com.epam.codingkata.refactoring.compose;
 
 public class Order {
 
-    private double itemCost = 1000.25;
-    private int festiveDiscount = 10;
-    private int memberDiscount = 5;
+    private double orderCost = 1000.25;
     private boolean orderedWithinTime = true;
 
     public double calculatePrice(){
-        double firstDiscountedPrice = itemCost * festiveDiscount/100;
+        int festiveDiscount = 10;
+        int memberDiscount = 5;
+
+        double firstDiscountedPrice = orderCost * festiveDiscount/100;
 
         if (orderedWithinTime) {
-            firstDiscountedPrice += firstDiscountedPrice + 100;
+            firstDiscountedPrice += firstDiscountedPrice + 10;
         }
 
-        double memberDiscountedPrice = itemCost * memberDiscount/100;
+        double memberDiscountedPrice = orderCost * memberDiscount/100;
 
         double totalDiscount = firstDiscountedPrice + memberDiscountedPrice;
 
-        double price = itemCost - totalDiscount;
+        double price = orderCost - totalDiscount;
 
-        if (price > 0) {
-            return price;
-        } else {
-            return 0;
-        }
+        return price;
     }
 }
